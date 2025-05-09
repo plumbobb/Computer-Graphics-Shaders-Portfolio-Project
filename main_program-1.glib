@@ -1,0 +1,80 @@
+##OpenGL GLIB
+
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+Timer 5.0
+
+Vertex texture.vert
+Fragment texture.frag
+Program Texture  TexUnit 6
+
+Texture2D  6  posx.bmp
+QuadYZ 5. 5. 10 10
+
+Texture2D  6  negx.bmp
+QuadYZ -5. 5. 10 10
+
+Texture2D  6  posy.bmp
+QuadXZ 5. 5. 10 10
+
+Texture2D  6  negy.bmp
+QuadXZ -5. 5. 10 10
+
+Texture2D  6  posz.bmp
+QuadXY 5. 5. 10 10
+
+Texture2D  6  negz.bmp
+QuadXY -5. 5. 10 10
+
+CubeMap 6 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+CubeMap 7 posx.bmp negx.bmp  posy.bmp negy.bmp   posz.bmp negz.bmp
+
+Vertex   cow.vert
+Fragment cow.frag
+Program  Texture TexUnit 8
+
+Texture2D 8 cow.bmp
+
+PushMatrix
+Scale .1
+Rotate 90 0 1 0
+Translate -1 0 0
+Obj cow.obj
+PopMatrix
+
+Vertex   holographic.vert
+Fragment holographic.frag
+Program  holographic		                \
+         alphaScale <.1 1. 5.>              \
+         fresnelIntensity <0. .5 1.>        \
+         fresnelPower <0. .5 1.>
+
+PushMatrix
+Scale .8
+Translate 0 0 0
+Obj cone.obj
+PopMatrix
+
+Vertex UFO.vert
+Fragment UFO.frag
+Program UFO							\
+		 uReflectUnit 6             \
+		 uRefractUnit 7				\
+		 uMix <0. 0. 1.>			\
+		 uNoiseAmp <0. 0. 5.>		\
+         uNoiseFreq <0.0 0.1 0.5>	\
+		 uWhiteMix <0. 0. 2.>		\
+		 uEta <1. 2. 3.>
+
+PushMatrix
+Scale .06
+Translate 0 8 0
+Obj UFO_Base.obj
+PopMatrix
+
+PushMatrix
+Scale .06
+Translate 0 8 0
+Obj UFO_Spinner.obj
+PopMatrix
