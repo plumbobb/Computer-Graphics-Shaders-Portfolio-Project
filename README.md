@@ -19,6 +19,6 @@ This is a holographic render simulating a holographic beam, themed as a UFO abdu
 
 <p align="center">
 UFO Hologram: <br/>
-<img src="https://imgur.com/gallery/ufo-image-dH46Jyv.png" height="80%" width="80%" alt="UFO Hologram"/>
+<img src="https://imgur.com/a/ufo-image-dH46Jyv.png" height="80%" width="80%" alt="UFO Hologram"/>
 <br />
 </p>
